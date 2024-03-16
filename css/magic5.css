@@ -363,8 +363,8 @@
  /* ------------------------- Main Elements -------------------------------------------------- */
  
  .section {
-    padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
+    padding-top: 50px;
+    padding-bottom: 50px;
     position: relative;
  }
  
