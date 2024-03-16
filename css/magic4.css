@@ -1,0 +1,1008 @@
+
+
+/* ------------------------- Default Header -------------------------------------------------- */
+
+.default-header {
+    padding-top: 27.5vh;
+    padding-bottom: calc(var(--section-padding) * 1);
+ }
+ 
+ .default-header.full-height.all-devices {
+    padding: 0;
+ }
+ 
+ .default-header.full-height.all-devices .container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: calc(var(--section-padding) * 1);
+    padding-bottom: calc(var(--section-padding) * 1);
+ }
+ 
+ .default-header .row {
+    justify-content: center;
+ }
+ 
+ .default-header h1 {
+    pointer-events: none;
+ }
+ 
+ .default-header h1,
+ .default-header h4 {
+    text-align: center;
+ }
+ 
+ .default-header h4 {
+    overflow: hidden;
+ }
+ 
+ .default-header h4 span {
+    display: inline-block;
+ }
+ 
+ 
+ @media screen and (max-width: 540px) {
+ 
+    .default-header.full-height.all-devices .container {
+       min-height: 100vh;
+       min-height: calc(var(--vh, 1vh) * 100);
+       min-height: 100svh;
+    }
+ 
+    .default-header.full-height.desktop {
+       padding-top: 22.5vh;
+       padding-top: calc(var(--vh, 1vh) * 22.5);
+       padding-top: 22.5svh;
+       padding-bottom: 22.5vh;
+       padding-bottom: calc(var(--vh, 1vh) * 22.5);
+       padding-bottom: 22.5svh;
+    }
+ }
+ 
+ /* INFO - Min. Width */
+ @media screen and (min-width: 540px) {
+ 
+    .default-header.full-height.desktop {
+       padding: 0;
+    }
+ 
+    .default-header.full-height.desktop .container {
+       min-height: 100vh;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding-top: calc(var(--section-padding) * 1);
+       padding-bottom: calc(var(--section-padding) * 1);
+    }
+ 
+ }
+ 
+ 
+ /* ------------------------- Split Words -------------------------------------------------- */
+ 
+ .split-chars {
+    position: relative;
+    transform: translateY(0) translateZ(0) rotate(0.001deg);
+    font-kerning: none;
+    -webkit-text-rendering: optimizeSpeed;
+    text-rendering: optimizeSpeed;
+ }
+ 
+ .split-chars .single-char {
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0) rotate(0.001deg);
+ }
+ 
+ .split-chars .single-char .single-char-inner {
+    position: relative;
+    transform: translateY(0) rotate(0.001deg);
+ }
+ 
+ 
+ /* ------------------------- Row - Split -------------------------------------------------- */
+ 
+ .row.split {
+    --gap: var(--col-padding);
+    --columns: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--row-padding) var(--gap);
+ }
+ 
+ .row.split .col {
+    width: calc((99.95% / var(--columns)) - (var(--gap) * ((var(--columns) - 1) / var(--columns))));
+ }
+ 
+ @media screen and (max-width: 1024px) {
+    .row.split {
+       --columns: 1;
+    }
+ }
+ 
+ /* ------------------------- Bottom Links -------------------------------------------------- */
+ 
+ .bottom-links {
+    position: absolute;
+    bottom: 0;
+    padding: calc(var(--row-padding) - 0.5em) var(--col-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    pointer-events: none;
+ }
+ 
+ .bottom-links .btn {
+    pointer-events: all;
+ }
+ 
+ @media screen and (max-width: 1024px) {
+    .bottom-links {
+       padding: var(--row-padding) var(--col-padding);
+    }
+    
+ }
+ 
+ /* ------------------------- Single - Vimeo Background -------------------------------------------------- */
+ 
+ .single-vimeo-background {
+    --aspect-ratio-w: 16;
+    --aspect-ratio-h: 9;
+    --parent-height: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(var(--parent-height) * 1vh);
+    overflow: hidden;
+    background: var(--color-dark);
+    transform: translateZ(0);
+    isolation: isolate;
+    pointer-events: none;
+    border-radius: 0 0 calc(var(--border-radius) * 1.5) calc(var(--border-radius) * 1.5);
+    border-radius: calc(var(--border-radius) * 1.5);
+ }
+ 
+ .single-vimeo-background iframe {
+    width: 100vw;
+    height: calc(var(--aspect-ratio-h)/var(--aspect-ratio-w)*(var(--parent-height) * 1vw));
+    min-height: calc(var(--parent-height) * 1vh);
+    min-width: calc(var(--aspect-ratio-w)/var(--aspect-ratio-h)*(var(--parent-height) * 1vh));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+ 
+ /* Placeholder */
+ 
+ .single-vimeo-background .vimeo-overlay-placeholder {
+    background: var(--color-dark);
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+ }
+ 
+ .single-vimeo-background .vimeo-overlay-placeholder.video-box video {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+ }
+ 
+ .single-vimeo-background[data-vimeo-status-activated="true"][data-vimeo-status-loaded="true"] .vimeo-overlay-placeholder {
+    opacity: 0;
+ }
+ 
+ .single-vimeo-background[data-vimeo-status-activated="true"][data-vimeo-status-loaded="true"][data-vimeo-status-sync="false"] .vimeo-overlay-placeholder {
+    opacity: 1;
+ }
+ 
+ .single-vimeo-background[data-vimeo-status-activated="true"][data-vimeo-status-loaded="true"][data-vimeo-status-sync="true"] .vimeo-overlay-placeholder {
+    opacity: 0;
+ }
+ 
+ /* Mobile / Dekstop */
+ 
+ .single-vimeo-background .vimeo-overlay-placeholder.placeholder-mobile {
+    display: none;
+ }
+ 
+ 
+ @media screen and (max-width: 1024px) {
+    .single-vimeo-background {
+       --parent-height: 100;
+    }
+ 
+    .single-vimeo-background .vimeo-overlay-placeholder.placeholder-mobile,
+    .single-vimeo-background .vimeo-overlay-placeholder.placeholder-mobile video {
+       height: calc(var(--parent-height) * var(--vh, 1vh));
+    }
+ 
+    .single-vimeo-background .vimeo-overlay-placeholder.placeholder-desktop {
+       display: none;
+    }
+ 
+    .single-vimeo-background .vimeo-overlay-placeholder.placeholder-mobile {
+       display: block;
+    }
+ 
+    /* Edited for mobile 22 FEB 2023 */
+ 
+    .home-header .shape-polygon {
+       display: none !important;
+    }
+ 
+    .home-header > .single-vimeo-background {
+       scale: 1 1 !important;
+    }
+ }
+ 
+ /* ------------------------- Single - Vimeo Player -------------------------------------------------- */
+ 
+ .single-vimeo-player {
+    --aspect-ratio: 56.24%;
+     position: relative;
+     width: 100%;
+     padding-bottom: var(--aspect-ratio);
+     overflow: hidden;
+    background: var(--color-dark);
+    border-radius: calc(var(--border-radius) * 1.5);
+    transform: translateZ(0);
+    isolation: isolate;
+ }
+ 
+ .single-vimeo-player iframe,
+ .single-vimeo-player object,
+ .single-vimeo-player embed {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     pointer-events: none;
+ }
+ 
+ .single-vimeo-player[data-vimeo-player-target] {
+    cursor: pointer;
+ }
+ 
+ /* Placeholder */
+ 
+ .single-vimeo-player .vimeo-overlay-placeholder {
+     background: var(--color-dark);
+     transition: all var(--animation-primary), opacity var(--animation-smooth);
+     opacity: 1;
+    transform: scale(1) rotate(0.001deg);
+ }
+ 
+ .single-vimeo-player[data-vimeo-status-activated="true"][data-vimeo-status-loaded="true"] .vimeo-overlay-placeholder {
+     opacity: 0;
+ }
+ 
+ @media (hover: hover) { 
+    .single-vimeo-player[data-vimeo-status-activated="false"]:hover .vimeo-overlay-placeholder{
+       transform: scale(1.025) rotate(0.001deg);
+    }
+ 
+    :is(.size-small, .size-tiny) .single-vimeo-player[data-vimeo-status-activated="false"]:hover .vimeo-overlay-placeholder{
+       transform: scale(1.05) rotate(0.001deg);
+    }
+ }
+ 
+ .single-vimeo-player .vimeo-overlay-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+ }
+ 
+ .single-vimeo-player .vimeo-overlay-text h2 {
+    font-size: calc(var(--title-size) * 3.5);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: var(--text-stroke) var(--color-secondary);
+    margin-top: 0;
+    transform: translateY(3%);
+ }
+ 
+ @media screen and (max-width: 720px) {
+    .single-vimeo-player .vimeo-overlay-text h2 {
+       font-size: 35vw;
+    }
+ }
+ 
+ .single-vimeo-player .vimeo-overlay-text h2 .single-char {
+    overflow: visible;
+ }
+ 
+ .single-vimeo-player .vimeo-overlay-text h2 .single-char-inner {
+    transform: translateY(0%) scale(1) rotate(0.001deg);
+    transition: var(--animation-smooth);
+ }
+ 
+ .single-vimeo-player .vimeo-overlay-text h2 .single-char:nth-child(2) .single-char-inner {transition-delay: 0.025s;}
+ .single-vimeo-player .vimeo-overlay-text h2 .single-char:nth-child(3) .single-char-inner {transition-delay: 0.05s;}
+ .single-vimeo-player .vimeo-overlay-text h2 .single-char:nth-child(4) .single-char-inner {transition-delay: 0.075s;}
+ .single-vimeo-player .vimeo-overlay-text h2 .single-char:nth-child(5) .single-char-inner {transition-delay: 0.1s;}
+ .single-vimeo-player .vimeo-overlay-text h2 .single-char:nth-child(6) .single-char-inner {transition-delay: 0.125s;}
+ .single-vimeo-player .vimeo-overlay-text h2 .single-char:nth-child(7) .single-char-inner {transition-delay: 0.15s;}
+ .single-vimeo-player .vimeo-overlay-text h2 .single-char:nth-child(8) .single-char-inner {transition-delay: 0.175s;}
+ .single-vimeo-player .vimeo-overlay-text h2 .single-char:nth-child(9) .single-char-inner {transition-delay: 0.2s;}
+ .single-vimeo-player .vimeo-overlay-text h2 .single-char:nth-child(10) .single-char-inner {transition-delay: 0.225s;}
+ 
+ .single-vimeo-player[data-vimeo-status-activated="true"][data-vimeo-status-loaded="true"] .vimeo-overlay-text h2 .single-char-inner {
+    transform: translateY(-100%) scale(0.75) rotate(0.001deg);
+    opacity: 0;
+ }
+ 
+ /* Overlay Dark */
+ 
+ .single-vimeo-player .vimeo-overlay-dark {
+     background: var(--color-dark);
+     transition: opacity var(--animation-primary);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+ }
+ 
+ .single-vimeo-player[data-vimeo-status-activated="true"] .vimeo-overlay-dark {
+     opacity: 0.5;
+ }
+ 
+ .single-vimeo-player[data-vimeo-status-activated="true"][data-vimeo-status-loaded="true"] .vimeo-overlay-dark {
+     opacity: 0;
+ }
+ 
+ 
+ /* Interface */
+ 
+ .single-vimeo-player .vimeo-overlay-interface {
+    pointer-events: none;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    align-items: flex-end;
+    padding: max(1em, 3vw);
+    gap: max(1em, 3vw);
+ }
+ 
+ .single-vimeo-player[data-vimeo-status-activated="true"][data-vimeo-status-play="false"] .vimeo-overlay-interface,
+ .single-vimeo-player[data-vimeo-status-activated="true"][data-vimeo-status-hover="true"]:hover .vimeo-overlay-interface {
+    opacity: 1;
+ }
+ 
+ @media screen and (max-width: 1024px) { 
+    .single-vimeo-player[data-vimeo-status-activated="true"][data-vimeo-status-play="true"] .vimeo-overlay-interface {
+       opacity: 0 !important;
+    }
+ }
+ 
+ .single-vimeo-player .vimeo-overlay-interface * {
+    pointer-events: all;
+ }
+ 
+ .single-vimeo-player .vimeo-overlay-interface h5 {
+    font-size: 1em;
+ }
+ 
+ .single-vimeo-player .vimeo-mute {
+    height: 1.5em;
+    width: 1.5em;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+ }
+ 
+ .single-vimeo-player .vimeo-mute svg {
+    width: 100%;
+    display: block;
+ }
+ 
+ .single-vimeo-player .vimeo-mute svg path {
+    fill: var(--color-light);
+ }
+ 
+ .single-vimeo-player .vimeo-mute svg:nth-child(2) {
+    display: none;
+ }
+ 
+ .single-vimeo-player[data-vimeo-status-muted="true"] .vimeo-mute svg:nth-child(1) {
+    display: none;
+ }
+ 
+ .single-vimeo-player[data-vimeo-status-muted="true"] .vimeo-mute svg:nth-child(2) {
+    display: block;
+ }
+ 
+ .single-vimeo-player .vimeo-duration {
+    height: 1.5em;
+    width: 2em;
+    display: flex;
+    align-items: baseline;
+    flex-shrink: 0;
+ }
+ 
+ .single-vimeo-player .vimeo-duration span {
+    color: var(--color-light);
+    white-space: nowrap;
+ }
+ 
+ /* Timeline */
+ 
+ .single-vimeo-player .vimeo-timeline {
+    height: 1.5em;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --timeline-rounded-corners: 1.5em;
+    --progress-value: var(--color-primary);
+    --progress-background: rgba(var(--color-light-rgb), 1);
+    --progress-height: 2px;
+    --dot-height: 0.6em;
+    --dot-color: transparent;
+ }
+ 
+ .single-vimeo-player .vimeo-timeline > input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    display: block;
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+ }
+ 
+ .single-vimeo-player .vimeo-timeline > progress {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: var(--progress-height);
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: var(--timeline-rounded-corners);
+    overflow: hidden;
+    z-index: 0;
+    background: transparent;
+    border: none;
+    color: var(--progress-value);
+    cursor: pointer;
+ }
+ 
+ /* Progress */
+ 
+ .single-vimeo-player progress::-webkit-progress-bar {
+   border-radius: var(--timeline-rounded-corners);
+   background-color: var(--progress-background);
+   box-shadow: 0;
+ }
+ 
+ .single-vimeo-player progress::-webkit-progress-value {
+   background: var(--progress-value);
+ }
+ 
+ .single-vimeo-player progress::-moz-progress-bar {
+   border-radius: var(--timeline-rounded-corners);
+   background: var(--progress-value);
+   box-shadow: 0;
+ }
+ 
+ .single-vimeo-player progress::-ms-fill {
+   border-radius: var(--timeline-rounded-corners);
+ }
+ 
+ /* Range */
+ 
+ .single-vimeo-player [type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+ }
+  
+ .single-vimeo-player [type="range"]:focus {
+    outline: none;
+ }
+  
+ .single-vimeo-player [type="range"]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+ }
+ 
+ .single-vimeo-player [type="range"].time::-webkit-slider-runnable-track{
+   width: 100%;
+   height: var(--progress-height);
+   cursor: pointer;
+   background: var(--progress-background);
+   border-radius: var(--timeline-rounded-corners)
+ }
+ 
+ .single-vimeo-player [type="range"]::-webkit-slider-thumb {
+   box-shadow: 0;
+   height: var(--dot-height);
+   width: var(--dot-height);
+   border-radius: var(--timeline-rounded-corners);
+   background: var(--dot-color);
+   cursor: pointer;
+   -webkit-appearance: none;
+ }
+ 
+ .single-vimeo-player [type="range"]:focus::-webkit-slider-runnable-track {
+   background: transparent;
+ }
+ 
+ .single-vimeo-player [type="range"]::-moz-range-track {
+   width: 100%;
+   height: var(--progress-height);
+   cursor: pointer;
+   background: var(--progress-background);
+   border-radius: 0;
+   border: 0;
+   border-radius: var(--timeline-rounded-corners);
+   overflow: hidden;
+ }
+ 
+ .single-vimeo-player [type="range"]::-moz-range-thumb {
+   box-shadow: 0;
+   border: 0;
+   height: var(--dot-height);
+   width: var(--dot-height);
+   border-radius: var(--timeline-rounded-corners);
+   background: var(--dot-color);
+   cursor: pointer;
+   box-shadow: 0;
+ }
+ 
+ 
+ /* Icon (Play + Pause) */
+ 
+ .single-vimeo-player .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max(4em, 8vw);
+    transform: scale(1) rotate(0.001deg);
+    transition: all var(--animation-primary);
+    background: var(--color-secondary);
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+ }
+ 
+ .single-vimeo-player .icon svg {
+    width: 50%;
+ }
+ 
+ @media (hover: hover) { 
+ 
+    .has-scroll-smooth .single-vimeo-player[data-vimeo-status-activated="false"]:hover .icon{
+       transform: scale(1.1) rotate(0.001deg);
+    }
+ }
+ 
+ /* Play */
+ 
+ .single-vimeo-player .vimeo-overlay-play {
+     z-index: 2;
+     display: flex;
+    align-items: center;
+     justify-content: center;
+    cursor: pointer;
+    opacity: 1;
+ }
+ 
+ .single-vimeo-player[data-vimeo-status-play="true"] .vimeo-overlay-play {
+    opacity: 0;
+ }
+ 
+ .single-vimeo-player .vimeo-overlay-play .icon svg path {
+    fill: var(--color-dark);
+ }
+ 
+ /* Pause */
+ 
+ .single-vimeo-player .vimeo-overlay-pause {
+     z-index: 3;
+     display: none;
+    align-items: center;
+     justify-content: center;
+    cursor: pointer;
+ }
+ 
+ .single-vimeo-player[data-vimeo-status-play="true"] .vimeo-overlay-pause {
+    display: flex;
+ }
+ 
+ .single-vimeo-player .vimeo-overlay-pause .icon {
+    opacity: 0;
+    background: var(--color-primary);
+ }
+ 
+ .single-vimeo-player .vimeo-overlay-pause .icon svg path {
+    stroke: var(--color-dark);
+ }
+ 
+ .single-vimeo-player[data-vimeo-status-activated="true"][data-vimeo-status-play="false"] .vimeo-overlay-pause  .icon,
+ .single-vimeo-player[data-vimeo-status-activated="true"][data-vimeo-status-hover="true"]:hover .vimeo-overlay-pause  .icon {
+    opacity: 1;
+ }
+ 
+ @media screen and (max-width: 1024px) { 
+    .single-vimeo-player[data-vimeo-status-activated="true"][data-vimeo-status-play="true"] .vimeo-overlay-pause  .icon {
+       opacity: 0 !important;
+    }
+ }
+ 
+ /*  Loading */
+ 
+ .single-vimeo-player .vimeo-overlay-loading {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 9;
+     transition: all 0.3s ease-in-out 0.5s;
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba(var(--color-dark-rgb), 0.5);
+ }
+ 
+ .single-vimeo-player[data-vimeo-status-play="true"] .vimeo-overlay-loading {
+     opacity: 1;
+ }
+ 
+ .single-vimeo-player[data-vimeo-status-play="true"][data-vimeo-status-loaded="true"] .vimeo-overlay-loading {
+     opacity: 0;
+ }
+ 
+ .single-vimeo-player .vimeo-overlay-loading svg {
+     width: 8em;
+ }
+ 
+ .single-vimeo-player .vimeo-overlay-loading svg path {
+     fill: var(--color-white);
+ }
+ /* ------------------------- Cookie Jar -------------------------------------------------- */
+ 
+ .cookie-jar-group {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: calc(var(--row-padding) - 4px) calc(var(--col-padding) - 4px);
+    pointer-events: none;
+ }
+ 
+ .cookie-jar {
+    background: var(--color-dark);
+    padding: 2em 2em 1.8em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 17em;
+    max-width: 25em;
+    font-size: 0.85em;
+    border-radius: calc(var(--border-radius) * 0.5);
+    pointer-events: all;
+    border: 1px solid rgba(var(--color-light-rgb), 0.1);
+    /* background: rgba(8, 8, 8, 1); */
+ }
+ 
+ .cookie-jar h4 {
+    margin-bottom: 0.2em;
+ }
+ 
+ .cookie-jar .row-content a {
+    position: relative;
+ }
+ 
+ .cookie-jar .row-content a::after {
+    content:"";
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(var(--color-light-rgb), 0.2);
+    left: 0;
+    transition: background-color var(--animation-fast);
+ }
+ 
+ 
+ .cookie-jar .row-content a:hover::after {
+    background-color: var(--color-primary);
+ }
+ 
+ .cookie-jar .row-buttons .col {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+ }
+ 
+ @media screen and (max-width: 1024px) {
+    .cookie-jar {
+       font-size: 1em;
+    }   
+ }
+ 
+ @media screen and (max-width: 540px) {
+    .cookie-jar-group {
+       justify-content: center;
+    }
+ }
+ 
+ /* ------------------------- Shape Polygon -------------------------------------------------- */
+ 
+ .shape-polygon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: calc(100% - (var(--col-padding) * 4));
+    aspect-ratio: 816/1000;
+    clip-path: polygon(24% 0, 67% 0, 86% 11%, 100% 100%, 19% 100%, 0 88%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ 
+ .shape-polygon .shape-polygon-inner {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+ }
+ 
+ @media (max-aspect-ratio: 8/10) {
+    .shape-polygon {
+       height: unset;
+       width: 66.666%;
+    }
+ }
+ 
+ @media screen and (max-width: 540px) {
+ 
+    .shape-polygon .shape-polygon-inner {
+       height: 100vh;
+       height: calc(var(--vh, 1vh) * 100);
+       height: 100svh;
+    }
+ }
+ 
+ /* ------------------------- Flickity Slider - Setup -------------------------------------------------- */
+ 
+ .flickity-slider-group {
+    width: 100%;
+    position: relative;
+    --gap: 2em;
+    --columns: 3;
+ }
+ 
+ .flickity-slider-group .flickity-carousel {
+    display: flex;
+ }
+ 
+ .flickity-slider-group .flickity-slide {
+    width: calc((99.95% / var(--columns)) - (var(--gap) * ((var(--columns) - 1) / var(--columns))));
+    margin-right: var(--gap);
+    flex-shrink: 0;
+    display: block;
+ }
+ 
+ /* Turn Flickity ON */
+ .flickity-slider-group .flickity-carousel::after {
+    content: "flickity";
+    display: none;
+ }
+ 
+ /* Remove Flex from for Flickity */
+ .flickity-slider-group .flickity-carousel {
+    display: block;
+ }
+ 
+ .flickity-slider-group .flickity-viewport {
+    overflow: visible;
+    width: 100%;
+ }
+ 
+ /* Flickity Controls */
+ 
+ .flickity-slider-group .flickity-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--gap);
+ }
+ 
+ .flickity-slider-group .flickity-controls .flickity-arrow {
+    position: relative;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all;
+    transform: scale(1) rotate(0.001deg);
+    transition: transform var(--animation-primary);
+ }
+ 
+ .flickity-slider-group .flickity-controls .flickity-arrow svg {
+    width: 40%;
+ }
+ 
+ .flickity-slider-group .flickity-controls .flickity-arrow svg :is(polyline, line, path) {
+    stroke: var(--color-dark);
+    stroke-width: 2px;
+ }
+ 
+ .flickity-slider-group .flickity-controls .flickity-arrow[data-flickity-control="prev"] svg {
+    transform: scaleX(-1);
+ }
+ 
+ .flickity-slider-group .flickity-controls .flickity-arrow[disabled] {
+    transform: scale(0) rotate(0.001deg);
+    pointer-events: none;
+ }
+ 
+ /* ------------------------- Single Work Item -------------------------------------------------- */
+ 
+ .single-work-item {
+    border-radius: var(--border-radius);
+    padding-top: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ /* Content */
+ 
+ .single-work-item .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--row-padding) var(--col-padding);
+    transition: var(--animation-primary);
+ }
+ 
+ .single-work-item .content h5 {
+    transition: opacity var(--animation-primary); 
+ }
+ 
+ .single-work-item .content h5.client {
+    text-align: right;
+ }
+ 
+ /* Tile */
+ 
+ .single-work-item .tile {
+    border-radius: var(--border-radius);
+    background: rgba(var(--color-light-rgb), 0.1);
+    overflow: hidden;
+    transform: translateZ(0);
+    isolation: isolate;
+    transition: var(--animation-primary);
+ }
+ 
+ .single-work-item .tile-inner {
+    transition: var(--animation-primary);
+ }
+ 
+ .single-work-item .tile picture {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+ }
+ 
+ .single-work-item .tile video {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: opacity var(--animation-primary) 0.1s;
+    opacity: 0;
+    scale: 1.02;
+    z-index: 2;
+    pointer-events: none;
+    display: none;
+ }
+ 
+ .single-work-item .tile .overlay-dark {
+    background-color: rgba(var(--color-black-rgb), 0);
+ }
+ 
+ @media (hover: hover) { 
+ 
+    /* Hover */
+ 
+    .single-work-item:hover .tile {
+       left: calc(var(--col-padding-small) * 0.5);
+       top: calc(var(--col-padding-small) * 0.5);
+       width: calc(100% - (var(--col-padding-small) * 1));
+       height: calc(100% - (var(--col-padding-small) * 1));
+    }
+ 
+    .single-work-item:hover .tile-inner {
+       left: calc(var(--col-padding-small) * -0.5);
+       top: calc(var(--col-padding-small) * -0.5);
+       width: calc(100% + (var(--col-padding-small) * 1));
+       height: calc(100% + (var(--col-padding-small) * 1));
+    }
+ 
+    .single-work-item .tile video {
+       display: block;
+    }
+ 
+    .single-work-item[data-thumb-video-status="active"] .tile video {
+       opacity: 1;
+       transition: opacity var(--animation-primary);
+    }
+ 
+ }
+ 
+ /* INFO - Min. Width */
+ @media screen and (min-width: 540px) {
+ 
+    /* Flickity Slide - Active */
+ 
+    .flickity-slider-group[data-flickity-slider-type="cards"] .single-work-item .content h5 {
+       opacity: 0;
+       text-align: center;
+    }
+    
+ 
+    .flickity-slider-group[data-flickity-slider-type="cards"] .single-work-item[data-thumb-video-status="active"] .content h5.client {
+       opacity: 1;
+    }
+ 
+    .flickity-slider-group[data-flickity-slider-type="cards"] .single-work-item .tile .overlay-dark {
+       background-color: rgba(var(--color-black-rgb), 0.15);
+    }
+ 
+ }
+ 
+ /* ------------------------- Marquee -------------------------------------------------- */
+ 
+ .marquee-group {
+    position: relative;
+ }
+ 
+ .marquee {
+    position: relative;
+ }
+ 
+ .marquee .marquee-scroll {
+    position: relative;
+    display: flex;
+    width: 140%;
+    margin-left: -20%;
+ }
+ 
+ .marquee .marquee-content {
+    position: relative;
+    display: flex;
+ }
+ 
+ .marquee .marquee-item {
+    width: 15vw;
+ }
